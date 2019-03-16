@@ -33,6 +33,8 @@ class RegisterUserViewController: UIViewController {
         
         print("Cancel button tapped")
         
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     /*
