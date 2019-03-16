@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Register User View Controller-->
         <scene sceneID="faF-nM-wOZ">
             <objects>
-                <viewController id="C1Q-Jj-5Ft" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterUserViewController" id="C1Q-Jj-5Ft" customClass="RegisterUserViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mty-L9-BGz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +133,9 @@
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="C1Q-Jj-5Ft" eventType="touchUpInside" id="QPP-2d-hCU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ku-2D-cRa">
                                 <rect key="frame" x="209" y="221" width="150" height="30"/>
@@ -140,11 +143,21 @@
                                 <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Sign up"/>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="C1Q-Jj-5Ft" eventType="touchUpInside" id="hIM-v0-FSi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8II-hF-wfM"/>
                     </view>
+                    <connections>
+                        <outlet property="emailAddressTextField" destination="JLs-2P-hFL" id="L6J-Lb-GDs"/>
+                        <outlet property="firstNameTextField" destination="7Uf-Yz-hHF" id="fx6-wc-Zld"/>
+                        <outlet property="lastNameTextField" destination="90t-Pr-fS8" id="geW-wQ-N5H"/>
+                        <outlet property="passwordTextField" destination="1kX-vf-uCO" id="su1-wR-MO1"/>
+                        <outlet property="repeatPasswordTextField" destination="H7e-nY-vsw" id="RcX-TX-MPD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2a-sO-wcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

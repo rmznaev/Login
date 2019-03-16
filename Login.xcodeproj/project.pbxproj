@@ -13,6 +13,7 @@
 		C47D497B223DA50200D85E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47D497A223DA50200D85E8E /* Assets.xcassets */; };
 		C47D497E223DA50200D85E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C47D497C223DA50200D85E8E /* LaunchScreen.storyboard */; };
 		C47D4986223DB36A00D85E8E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D4985223DB36A00D85E8E /* SignInViewController.swift */; };
+		C47D4988223DB6BB00D85E8E /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47D4987223DB6BB00D85E8E /* RegisterUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C47D497D223DA50200D85E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C47D497F223DA50200D85E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47D4985223DB36A00D85E8E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		C47D4987223DB6BB00D85E8E /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C47D4973223DA50100D85E8E /* AppDelegate.swift */,
 				C47D4985223DB36A00D85E8E /* SignInViewController.swift */,
+				C47D4987223DB6BB00D85E8E /* RegisterUserViewController.swift */,
 				C47D4975223DA50100D85E8E /* ViewController.swift */,
 				C47D4977223DA50100D85E8E /* Main.storyboard */,
 				C47D497A223DA50200D85E8E /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47D4988223DB6BB00D85E8E /* RegisterUserViewController.swift in Sources */,
 				C47D4976223DA50100D85E8E /* ViewController.swift in Sources */,
 				C47D4974223DA50100D85E8E /* AppDelegate.swift in Sources */,
 				C47D4986223DB36A00D85E8E /* SignInViewController.swift in Sources */,
