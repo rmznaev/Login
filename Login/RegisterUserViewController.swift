@@ -35,6 +35,7 @@ class RegisterUserViewController: UIViewController {
             (repeatPasswordTextField.text?.isEmpty)!
         {
             // Display alert message and return
+            displayMessage(userMessage: "All fields are required to fill in")
             
             return
         }
@@ -43,6 +44,7 @@ class RegisterUserViewController: UIViewController {
         if ((passwordTextField.text?.elementsEqual(repeatPasswordTextField.text!))! != true)
         {
             // Display alert message and return
+            displayMessage(userMessage: "Please make sure that passwords match")
             
             return
         }
