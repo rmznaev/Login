@@ -30,6 +30,10 @@ class SignInViewController: UIViewController {
         
         print("Register new account button tapped")
         
+        let registerViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegisterUserViewController") as! RegisterUserViewController
+        
+        self.present(registerViewController, animated: true)
+        
     }
     
     /*
