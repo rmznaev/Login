@@ -27,6 +27,26 @@ class RegisterUserViewController: UIViewController {
         
         print("Sign up button tapped")
         
+        // Validate required fields are not empty
+        if (firstNameTextField.text?.isEmpty)! ||
+            (lastNameTextField.text?.isEmpty)! ||
+            (emailAddressTextField.text?.isEmpty)! ||
+            (passwordTextField.text?.isEmpty)! ||
+            (repeatPasswordTextField.text?.isEmpty)!
+        {
+            // Display alert message and return
+            
+            return
+        }
+        
+        // Validate Password
+        if ((passwordTextField.text?.elementsEqual(repeatPasswordTextField.text!))! != true)
+        {
+            // Display alert message and return
+            
+            return
+        }
+        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -35,6 +55,22 @@ class RegisterUserViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    func displayMessage(userMessage: String) -> Void {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default)
+            { (action:UIAlertAction!) in
+                // Code in this block will triggerwhen OK button tapped
+                print("OK button tapped")
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     /*
