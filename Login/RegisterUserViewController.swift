@@ -75,6 +75,12 @@ class RegisterUserViewController: UIViewController {
                            "userName": emailAddressTextField.text!,
                            "userPassword": passwordTextField.text!,
                            ] as [String: String]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: postString, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
