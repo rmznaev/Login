@@ -49,6 +49,23 @@ class RegisterUserViewController: UIViewController {
             return
         }
         
+        // Create Activity Indicator
+        let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        
+        // Position Activity Indicator in the center of the main view
+        myActivityIndicator.center = view.center
+        
+        // If needed, you can prevent Activity Indicator from hiding when stopAnimating() is called
+        myActivityIndicator.hidesWhenStopped = false
+        
+        // Start Activity indicator
+        myActivityIndicator.startAnimating()
+        
+        view.addSubview(myActivityIndicator)
+        
+        // Send HTTP request to Register user
+        let myURl = URL(string: "")
+        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
