@@ -85,6 +85,7 @@ class RegisterUserViewController: UIViewController {
         }
         
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            
             self.removeActivityIndicator(activityIndicator: myActivityIndicator)
             
             if error != nil {
