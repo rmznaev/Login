@@ -80,6 +80,55 @@ class RegisterUserViewController: UIViewController {
             request.httpBody = try JSONSerialization.data(withJSONObject: postString, options: .prettyPrinted)
         } catch let error {
             print(error.localizedDescription)
+            displayMessage(userMessage: "Something went wrong. Try again.")
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+            
+            if error != nil {
+                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later.")
+                print("error=\(String(describing: error))")
+                return
+            }
+            // Let's convert response sent from a server side code to a NSDictionary object:
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                if let parseJSON = json {
+                    
+                    let userId = parseJSON["userId"] as? String
+                    print("User id: \(String(describing: userId!))")
+                    
+                    if (userId?.isEmpty)! {
+                        // Display an Alert dialog with a friendly error message
+                        self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
+                        return
+                    } else {
+                        self.displayMessage(userMessage: "Successfully Registered a New Account. Please proceed to Sign in")
+                    }
+                } else {
+                    // Display an Alert dialog with a friendly error message
+                    self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
+                }
+            } catch {
+                
+                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
+                
+                // Display an Alert dialog with a friendly error message
+                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
+                print(error)
+            }
+            }
+            
+            task.resume()
+    }
+    
+    func removeActivityIndicator(activityIndicator: UIActivityIndicatorView) {
+        DispatchQueue.main.async {
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
         }
     }
     
