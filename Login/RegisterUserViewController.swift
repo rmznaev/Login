@@ -64,8 +64,17 @@ class RegisterUserViewController: UIViewController {
         view.addSubview(myActivityIndicator)
         
         // Send HTTP request to Register user
-        let myURl = URL(string: "")
+        let myURl = URL(string: "http://localhost:8000/api/users")
+        var request = URLRequest(url: myURl!)
+        request.httpMethod = "POST" // Compose a query string
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
         
+        let postString = [ "firstName": firstNameTextField.text!,
+                           "lastName": lastNameTextField.text!,
+                           "userName": emailAddressTextField.text!,
+                           "userPassword": passwordTextField.text!,
+                           ] as [String: String]
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
